@@ -10,5 +10,8 @@
     <color name="colorMainBlueDark">#1568BB</color>
     <color name="colorMainRed">#FF5454</color>
     <color name="colorMainGreem">#2DD872</color>
+    
+    <color name="module_bottom_navigation_view_bg">#FDFEFF</color>
+    <color name="module_window_bg">#F6F6F6</color>
 
 </resources>
