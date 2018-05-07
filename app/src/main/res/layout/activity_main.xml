@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context="ink.moming.installmentmemo.MainActivity">
 
+
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_view_main"
         android:layout_width="match_parent"

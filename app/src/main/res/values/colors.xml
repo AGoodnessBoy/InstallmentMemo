@@ -4,7 +4,6 @@
     <color name="colorPrimary">@color/colorMainBlue</color>
     <color name="colorPrimaryDark">@color/colorMainBlueDark</color>
     <color name="colorAccent">@color/colorMainYellow</color>
-    
     <color name="colorMainBlue">#1A8DFF</color>
     <color name="colorMainYellow">#FFB60D</color>
     <color name="colorMainBlueDark">#1568BB</color>
@@ -13,5 +12,6 @@
     
     <color name="module_bottom_navigation_view_bg">#FDFEFF</color>
     <color name="module_window_bg">#F6F6F6</color>
+    <color name="module_text_color_withe">#FFFFFF</color>
 
 </resources>
