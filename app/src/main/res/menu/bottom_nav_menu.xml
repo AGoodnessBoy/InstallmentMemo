@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_item_bill"
+            android:title="@string/monthly_bill_fragment_title"
+        android:icon="@drawable/ic_bottom_nav_bill"
+        />
+    <item android:id="@+id/menu_item_plan"
+        android:title="@string/repayment_plan_fragment_title"
+        android:icon="@drawable/ic_bottom_nav_plan"
+        />
+    <item android:id="@+id/menu_item_me"
+        android:title="@string/account_fragment_title"
+        android:icon="@drawable/ic_bottom_nav_me"
+        />
+
+</menu>

@@ -11,6 +11,7 @@
     <color name="colorMainGreem">#2DD872</color>
     
     <color name="module_bottom_navigation_view_bg">#FDFEFF</color>
+    <color name="module_bottom_navigation_icon_nomarl">#cccccc</color>
     <color name="module_window_bg">#F6F6F6</color>
     <color name="module_text_color_withe">#FFFFFF</color>
 

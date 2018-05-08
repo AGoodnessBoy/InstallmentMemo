@@ -16,6 +16,9 @@
         android:layout_gravity="bottom"
         android:background="@color/module_bottom_navigation_view_bg"
         app:elevation="4dp"
+        app:itemTextColor="@drawable/bottom_nav_title_selector"
+        app:itemIconTint="@drawable/bottom_nav_title_selector"
+        app:menu="@menu/bottom_nav_menu"
         />
 
     <android.support.v4.view.ViewPager
