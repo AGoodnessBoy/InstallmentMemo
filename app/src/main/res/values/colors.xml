@@ -7,12 +7,16 @@
     <color name="colorMainBlue">#1A8DFF</color>
     <color name="colorMainYellow">#FFB60D</color>
     <color name="colorMainBlueDark">#1568BB</color>
-    <color name="colorMainRed">#FF5454</color>
+    <color name="colorMainRed">#f77171</color>
     <color name="colorMainGreem">#2DD872</color>
     
     <color name="module_bottom_navigation_view_bg">#FDFEFF</color>
     <color name="module_bottom_navigation_icon_nomarl">#cccccc</color>
     <color name="module_window_bg">#F6F6F6</color>
-    <color name="module_text_color_withe">#FFFFFF</color>
+    <color name="module_text_color_withe">#ffffff</color>
+    <color name="module_text_color_72">#b7b7b7</color>
+    <color name="module_line_color_92">#eaeaea</color>
+    <color name="module_title_color">#464e54</color>
+    <color name="module_withe_transparent_200">#c8ffffff</color>
 
 </resources>
