@@ -3,4 +3,5 @@
     <string name="account_fragment_title">Me</string>
     <string name="monthly_bill_fragment_title">Bill</string>
     <string name="repayment_plan_fragment_title">Plan</string>
+    <string name="initialization_bill_account_text">Please add a repayment record first!</string>
 </resources>

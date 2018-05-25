@@ -1,9 +1,18 @@
 package ink.moming.installmentmemo;
 
+import android.provider.BaseColumns;
+
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.lang.reflect.Modifier;
 
+import ink.moming.installmentmemo.data.InstallmentContract;
+
+
+import java.lang.reflect.Field;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -11,7 +20,9 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public void inner_class_exists() throws Exception {
+        Class[] innerClasses = InstallmentContract.class.getDeclaredClasses();
+        assertEquals("There should be 1 Inner class inside the contract class", 2, innerClasses.length);
     }
+
 }

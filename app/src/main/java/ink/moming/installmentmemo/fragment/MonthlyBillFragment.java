@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class MonthlyBillFragment extends Fragment {
 
     private RecyclerView mRecycleList;
     private MonthlyBillListAdapter mAdapter;
+    private Button mInitializationButton;
 
 
     public MonthlyBillFragment() {
@@ -35,6 +37,7 @@ public class MonthlyBillFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_monthly_bill, container, false);
         mRecycleList = view.findViewById(R.id.rc_monthly_bill_list);
+        mInitializationButton = view.findViewById(R.id.btn_initialization_bill_account);
         mAdapter = new MonthlyBillListAdapter(getContext());
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());

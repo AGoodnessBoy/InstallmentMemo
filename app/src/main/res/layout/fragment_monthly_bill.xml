@@ -28,7 +28,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:layout_marginTop="?attr/actionBarSize"
         android:background="@color/colorMainBlue">
 
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="20dp"
             android:text="Total repay"
             android:textAlignment="center"
             android:textColor="@color/module_withe_transparent_200"
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="20dp"
             android:text="Rest repay"
             android:textColor="@color/module_withe_transparent_200"
             android:textSize="18sp"
@@ -103,14 +103,27 @@
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_marginTop="222dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/rc_monthly_bill_list"
-            >
-        </android.support.v7.widget.RecyclerView>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/initialization_bill_account_text"
+        android:id="@+id/btn_initialization_bill_account"
+        android:layout_marginTop="200dp"
+        android:textColor="@color/module_text_color_withe"
+        android:background="@drawable/button_default_selector"
+        android:visibility="invisible"
+        />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="180dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rc_monthly_bill_list"
+        />
 
 
 
