@@ -1,6 +1,8 @@
 package ink.moming.installmentmemo.adapter;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +12,15 @@ import android.widget.TextView;
 import java.util.List;
 
 import ink.moming.installmentmemo.R;
-import ink.moming.installmentmemo.data.FakeData;
 
-public class MonthlyBillListAdapter extends RecyclerView.Adapter<MonthlyBillListAdapter.MonthlyBillListViewHolder> {
+import ink.moming.installmentmemo.data.InstallmentContract.InstallmentEntry;
+import ink.moming.installmentmemo.data.InstallmentContract.BillAccountEntry;
+import ink.moming.installmentmemo.ui.StickyRecyclerView;
+
+public class MonthlyBillListAdapter extends StickyRecyclerView.StickyAdapter<MonthlyBillListAdapter.MonthlyBillListViewHolder> {
 
     private final Context mContext;
-    private List<FakeData.Repaydata> mData;
+    private Cursor mData;
 
     public MonthlyBillListAdapter(Context mContext) {
         this.mContext = mContext;
@@ -33,25 +38,33 @@ public class MonthlyBillListAdapter extends RecyclerView.Adapter<MonthlyBillList
     }
 
     @Override
-    public void onBindViewHolder(MonthlyBillListViewHolder holder, int position) {
-        FakeData.Repaydata currData = mData.get(position);
-        holder.mBillName.setText(currData.getName());
-        holder.mBillNum.setText(currData.getRepay_number());
-        holder.mBillRepayedCount.setText(currData.getRepayed_count());
-        holder.mBillTotalCount.setText(currData.getTotal_count());
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        mData.moveToPosition(position);
+        MonthlyBillListViewHolder mHolder = (MonthlyBillListAdapter.MonthlyBillListViewHolder)holder;
+
+        mHolder.mBillName.setText(mData.getString(mData.getColumnIndex(InstallmentEntry.COLUMN_INS_NAME)));
+        mHolder.mBillNum.setText(mData.getString(mData.getColumnIndex(InstallmentEntry.COLUMN_INS_REPAY_NUMBER)));
+        mHolder.mBillRepayedCount.setText(mData.getString(mData.getColumnIndex(InstallmentEntry.COLUMN_INS_REPAYED_COUNT)));
+        mHolder.mBillTotalCount.setText(mData.getColumnIndex(InstallmentEntry.COLUMN_INS_TOTAL_COUNT));
 
     }
+
 
     @Override
     public int getItemCount() {
         if (null==mData) return 0;
-        return mData.size();
+        return mData.getCount();
     }
-    public void swapData(List<FakeData.Repaydata> newData){
+    public void swapData(Cursor newData){
         mData = newData;
         notifyDataSetChanged();
     }
 
+    @Override
+    public String getItemViewTitle(int position) {
+        mData.moveToPosition(position);
+        return mData.getString(mData.getColumnIndex(BillAccountEntry.COLUMN_BA_NAME));
+    }
 
 
     public class MonthlyBillListViewHolder extends RecyclerView.ViewHolder{

@@ -30,6 +30,8 @@ public class InstallmentDbHelper extends SQLiteOpenHelper {
                         " REAL NOT NULL , "+
                         BillAccountEntry.COLUMN_BA_USED+
                         " REAL NOT NULL , "+
+                        BillAccountEntry.COLUMN_BA_REPAYMENT_DATE+
+                        " TEXT NOT NULL , "+
                         BillAccountEntry.COLUMN_BA_REMARK+
                         " TEXT NOT NULL , "+
                         " UNIQUE ("+ BillAccountEntry.COLUMN_BA_NAME+

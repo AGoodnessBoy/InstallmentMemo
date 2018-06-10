@@ -36,11 +36,18 @@ public class InstallmentContract {
 
     public static final String PATH_INSTALLMENT= "installment";
     public static final String PATH_BILL_ACCOUNT= "bill_account";
+    public static final String PATH_INST_WITH_BA= "InstallmentWithAccount";
+
 
     public static final class InstallmentEntry implements BaseColumns{
         public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon()
                 .appendPath(PATH_INSTALLMENT)
                 .build();
+
+        public static final Uri CONTENET_WITH_BA_URI = BASE_CONTENT_URI.buildUpon()
+                .appendPath(PATH_INST_WITH_BA)
+                .build();
+
 
         public static final String TABLE_NAME = "table_ins";
 
@@ -52,7 +59,7 @@ public class InstallmentContract {
         public static final String COLUMN_INS_REPAYED_COUNT = "ins_repayed_count";
         //每期需还
         public static final String COLUMN_INS_REPAY_NUMBER = "ins_repay_number";
-
+        //备注
         public static final String COLUMN_INS_REMARK = "ins_remark";
 
         public static final String COLUMN_INS_ACCOUNT = "ins_account";
@@ -81,6 +88,8 @@ public class InstallmentContract {
         public static final String COLUMN_BA_USED="ba_used";
 
         public static final String COLUMN_BA_REMARK = "ba_remark";
+        //还款日期
+        public static final String COLUMN_BA_REPAYMENT_DATE = "ba_remark";
 
         public static Uri buildUriWithId(Long id){
             return CONTENT_URI.buildUpon()

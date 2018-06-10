@@ -20,6 +20,7 @@ public class InstallmentProvider extends ContentProvider {
 
     public static final int CODE_INS = 500;
     public static final int CODE_INS_WITH_ID = 501;
+    public static final int CODE_INS_WITH_BA = 502;
 
     public static final int CODE_BA = 600;
     public static final int CODE_BA_WITH_ID = 601;
@@ -34,8 +35,9 @@ public class InstallmentProvider extends ContentProvider {
 
         matcher.addURI(authority,InstallmentContract.PATH_INSTALLMENT,CODE_INS);
         matcher.addURI(authority,InstallmentContract.PATH_BILL_ACCOUNT,CODE_BA);
-        matcher.addURI(authority,InstallmentContract.PATH_INSTALLMENT,CODE_INS_WITH_ID);
-        matcher.addURI(authority,InstallmentContract.PATH_BILL_ACCOUNT,CODE_BA_WITH_ID);
+        matcher.addURI(authority,InstallmentContract.PATH_INSTALLMENT+"/#",CODE_INS_WITH_ID);
+        matcher.addURI(authority,InstallmentContract.PATH_INST_WITH_BA,CODE_INS_WITH_BA);
+        matcher.addURI(authority,InstallmentContract.PATH_BILL_ACCOUNT+"/#",CODE_BA_WITH_ID);
 
         return matcher;
 
@@ -69,6 +71,17 @@ public class InstallmentProvider extends ContentProvider {
                         null,sortOrder);
                 break;
 
+
+
+            }
+
+            case CODE_INS_WITH_BA:{
+                String qurey_sql = "select * from "+InstallmentEntry.TABLE_NAME
+                        +" inner join "+BillAccountEntry.TABLE_NAME
+                        +" on "+InstallmentEntry.COLUMN_INS_ACCOUNT
+                        +" = " +BillAccountEntry._ID;
+                cursor =  mDbHelper.getReadableDatabase().rawQuery(qurey_sql,null);
+                break;
 
             }
 
@@ -281,4 +294,7 @@ public class InstallmentProvider extends ContentProvider {
 
 
     }
+
+
+
 }

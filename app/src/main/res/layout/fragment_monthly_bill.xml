@@ -118,11 +118,16 @@
         />
 
 
-    <android.support.v7.widget.RecyclerView
+    <ink.moming.installmentmemo.ui.StickyRecyclerView
         android:layout_marginTop="180dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/rc_monthly_bill_list"
+        app:dividerColor="@color/module_line_color_92"
+        app:dividerHeight="1dp"
+        app:titleColor="#e3f7ff"
+        app:titleHeight="48dp"
+        app:titleTextColor="#6598a9"
         />
 
 
